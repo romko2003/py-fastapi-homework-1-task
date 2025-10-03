@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from datetime import date
+import datetime as dt
 from typing import Optional, List
 from pydantic import BaseModel
 
@@ -8,7 +8,7 @@ from pydantic import BaseModel
 class MovieDetailResponseSchema(BaseModel):
     id: int
     name: Optional[str] = None
-    date: Optional[date] = None
+    date: Optional[dt.date] = None
     score: Optional[float] = None
     genre: Optional[str] = None
     overview: Optional[str] = None
