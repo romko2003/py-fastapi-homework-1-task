@@ -1,4 +1,5 @@
 # src/database/__init__.py
-from .session import get_db, init_db, close_db
+from .models import Base
+from .session import get_db, init_db, close_db  # і, якщо є, engine, AsyncSessionLocal
 
-__all__ = ["get_db", "init_db", "close_db"]
+__all__ = ["Base", "get_db", "init_db", "close_db"]  # додай "engine", "AsyncSessionLocal" за потреби
