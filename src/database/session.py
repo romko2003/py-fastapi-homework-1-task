@@ -21,6 +21,16 @@ async def init_db() -> None:
         await conn.execute(text("SELECT 1"))
 
 
+async def reset_sqlite_database() -> None:
+    """
+    Скидає SQLite-базу до «чистого» стану для тестів:
+    дропає всі таблиці та створює їх заново.
+    """
+    async with engine.begin() as conn:
+        await conn.run_sync(Base.metadata.drop_all)
+        await conn.run_sync(Base.metadata.create_all)
+
+
 async def close_db() -> None:
     await engine.dispose()
 

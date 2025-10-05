@@ -1,8 +1,8 @@
 # src/main.py
 from contextlib import asynccontextmanager
 from fastapi import FastAPI
-from .database import init_db, close_db      # експортується з database/__init__.py
-from .routes import movie_router             # експортується з routes/__init__.py
+from .database import init_db, close_db
+from .routes import movie_router
 
 
 @asynccontextmanager
