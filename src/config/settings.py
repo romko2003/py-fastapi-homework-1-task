@@ -1,3 +1,4 @@
+# src/config/settings.py
 from __future__ import annotations
 from functools import lru_cache
 from pydantic import BaseSettings
@@ -12,9 +13,6 @@ class Settings(BaseSettings):
     TESTING: bool = False
     DB_URL: str = f"sqlite+aiosqlite:///{DB_PATH}"
     TEST_DB_URL: str = f"sqlite+aiosqlite:///{TEST_DB_PATH}"
-
-    class Config:
-        env_prefix = ""  # можна підхоплювати з ENV, якщо треба
 
 
 @lru_cache
