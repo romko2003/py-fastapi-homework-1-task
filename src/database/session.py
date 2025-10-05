@@ -6,7 +6,7 @@ from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker, create_asyn
 from sqlalchemy import text
 
 from .models import Base
-from config import get_settings   # <-- ключове
+from config import get_settings
 
 settings = get_settings()
 

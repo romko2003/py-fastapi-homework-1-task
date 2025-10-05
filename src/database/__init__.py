@@ -1,3 +1,6 @@
+# src/database/__init__.py
+from config import get_settings
+
 from .models import Base
 from .session import (
     get_db,
@@ -8,6 +11,7 @@ from .session import (
     engine,
     AsyncSessionLocal,
 )
+from .populate import CSVDatabaseSeeder
 
 __all__ = [
     "Base",
@@ -18,4 +22,6 @@ __all__ = [
     "reset_sqlite_database",
     "engine",
     "AsyncSessionLocal",
+    "CSVDatabaseSeeder",
+    "get_settings",
 ]
